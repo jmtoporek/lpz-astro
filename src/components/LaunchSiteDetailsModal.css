@@ -1,0 +1,44 @@
+.launchsite-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  background: rgb(0 0 0 / 50%);
+}
+
+.launchsite-modal {
+  width: min(100%, 700px);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 25%);
+}
+
+.launchsite-modal-header,
+.launchsite-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.launchsite-modal-body {
+  padding: 1.25rem;
+}
+
+.launchsite-modal-description {
+  white-space: pre-line;
+}
+
+.launchsite-modal-footer {
+  justify-content: flex-end;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 0;
+}

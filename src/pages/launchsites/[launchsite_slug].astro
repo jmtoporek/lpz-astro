@@ -1,0 +1,79 @@
+---
+import Template from "../../layouts/Template.astro";
+import LaunchSiteList from "../../assets/launchsites_20261009.json";
+
+export function getStaticPaths() {
+  return LaunchSiteList.map((launchSite) => ({
+    params: { launchsite_slug: launchSite.slug },
+    props: { launchSite },
+  }));
+}
+
+const { launchSite } = Astro.props;
+---
+
+<Template>
+  <main class="container py-4">
+    <a class="btn btn-outline-secondary mb-4" href="/launchsites">
+      Back to Launch Sites
+    </a>
+
+    <article class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          {launchSite.logo_url ? (
+            <div class="logo-for-card">
+              <img src={launchSite.logo_url} alt={`${launchSite.name} Logo`} />
+            </div>
+          ) : (
+            <div class="logo-placeholder text-center">
+              {launchSite.name.slice(0, 2).toUpperCase()}
+            </div>
+          )}
+          <div>
+            <h1 class="h2 mb-1">{launchSite.name}</h1>
+            <span class="badge text-bg-secondary">{launchSite.status}</span>
+            {launchSite.editor_recommended && (
+              <span class="badge bg-success-subtle text-success-emphasis ms-2">
+                RECOMMENDED
+              </span>
+            )}
+          </div>
+        </div>
+
+        {launchSite.tagline && <p class="lead">{launchSite.tagline}</p>}
+
+        <dl class="row">
+          <dt class="col-sm-3">Submission</dt>
+          <dd class="col-sm-9">
+            {launchSite.submit_url ? (
+              <a href={launchSite.submit_url} target="_blank" rel="noopener noreferrer">
+                {launchSite.submit_url}
+              </a>
+            ) : (
+              "No submission link available"
+            )}
+          </dd>
+
+          <dt class="col-sm-3">Last updated</dt>
+          <dd class="col-sm-9">{launchSite.updated_at.slice(0, 10)}</dd>
+
+          <dt class="col-sm-3">Verified</dt>
+          <dd class="col-sm-9">{launchSite.verified ? "Yes" : "No"}</dd>
+
+          <dt class="col-sm-3">Paid only</dt>
+          <dd class="col-sm-9">{launchSite.paid_only ? "Yes" : "No"}</dd>
+        </dl>
+
+        <a
+          class="btn btn-primary"
+          href={launchSite.site_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit {launchSite.name}
+        </a>
+      </div>
+    </article>
+  </main>
+</Template>
