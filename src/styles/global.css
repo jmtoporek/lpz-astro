@@ -202,3 +202,154 @@ html body {
   .internal-link {
     font-size: 0.85rem;
   }
+
+  .launchsites-flexbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  margin-top: 10px;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+}
+
+#hp-launchsites.launchsites-flexbox {
+  justify-content: center;
+  align-content: center;
+}
+
+.launchsite-flex-item{
+    border: solid 1px #CCC;
+    border-radius: 5px;
+    background-color: #EEE;
+    padding: 10px;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    .tagline-container {
+      flex-grow: 2;
+    }
+}
+
+.logo-for-card{
+  width: 48px;
+  height: 48px;
+  border: solid 1px #CCC;
+  border-radius: 8px;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.logo-for-card img{
+  width: 100%;
+}
+
+.logo-placeholder{
+  display: inline-block;
+  min-width: 48px;
+  height: 48px;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  background-color: #33F;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 24px;
+  margin: auto;
+  padding-top: 4px;
+}
+
+.inactive-link{
+  width: 90%;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+  .launchsite-flex-item{
+    width: 98%;
+  }
+  .hide-sm-and-less{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .launchsite-flex-item{
+    width: 48.2%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1399px) {
+  .launchsite-flex-item{
+    width: 31.5%;
+  }
+}
+
+.product-hunt-sticker{
+  width: 250px;
+  height: 54px;
+}
+
+.stats-row{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+
+  .stat-card {
+    border: solid #999 1px;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    min-width: 210px;
+
+    .stat-highlight{
+      color: #eb003a;
+      font-weight: 900;
+      font-size: 1.75em;
+      border-radius: 10px;
+    }
+  }
+}
+
+.homepage-lead{
+  max-width: 700px;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.logo-container{
+  max-width: 200px;
+}
+
+.logo-container img{
+  width: 100%;
+  margin: auto;
+}
+
+.ls-description img.desc-image-content{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.last-updated-tag{
+  background-color: #D8D8D8;
+  color: #666;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 0.8em;
+}
+
+.last-updated-tag.recent-edit{
+  color: green;
+  background-color: #90EE90;
+}
+
+
+.overflow-link {
+  overflow-wrap: break-word; /* allow the long words to be broken and wrap onto the next line */
+}

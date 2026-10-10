@@ -1,11 +1,171 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Template from "../layouts/Template.astro";
+import phlogo from '../assets/phlogo.png';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Template>
+  
+    <div class="mb-4 nightsky-gradient-background">
+      <div class="p-3 text-center">
+        <div class="container py-3">
+          <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            width="200px" height="200px" viewBox="0 0 512 512"  xml:space="preserve">
+            <style type="text/css">
+              <![CDATA[
+                .st0{fill:#FFFFFF;}
+              ]]>
+            </style>
+            <g>
+              <path class="st0" d="M127.083,247.824l50.031-76.906c0,0-74.734-29.688-109.547-3.078C32.755,194.465,0.005,268.184,0.005,268.184
+                l37.109,21.516C37.114,289.699,84.083,198.684,127.083,247.824z"/>
+              <path class="st0" d="M264.177,384.918l76.906-50.031c0,0,29.688,74.734,3.078,109.547
+                c-26.625,34.797-100.344,67.563-100.344,67.563l-21.5-37.109C222.317,474.887,313.333,427.918,264.177,384.918z"/>
+              <path class="st0" d="M206.692,362.887l-13.203-13.188c-24,62.375-80.375,49.188-80.375,49.188s-13.188-56.375,49.188-80.375
+                l-13.188-13.188c-34.797-6-79.188,35.984-86.391,76.766c-7.188,40.781-8.391,75.563-8.391,75.563s34.781-1.188,75.578-8.391
+                S212.692,397.684,206.692,362.887z"/>
+              <path class="st0" d="M505.224,6.777C450.786-18.738,312.927,28.98,236.255,130.668c-58.422,77.453-89.688,129.641-89.688,129.641
+                l46.406,46.406l12.313,12.313l46.391,46.391c0,0,52.219-31.25,129.672-89.656C483.005,199.074,530.739,61.215,505.224,6.777z
+                M274.63,237.371c-12.813-12.813-12.813-33.594,0-46.406s33.578-12.813,46.406,0.016c12.813,12.813,12.813,33.578,0,46.391
+                C308.208,250.184,287.442,250.184,274.63,237.371z M351.552,160.465c-16.563-16.578-16.563-43.422,0-59.984
+                c16.547-16.563,43.406-16.563,59.969,0s16.563,43.406,0,59.984C394.958,177.012,368.099,177.012,351.552,160.465z"/>
+            </g>
+          </svg>
+          <div class="homepage-lead">
+            <h1 class="hero-h1" itemprop=”name”><strong>Launch Point Zero</strong></h1>
+            <h2 class="mx-auto larger" itemprop=”description”>
+              The Directory of places to launch with the most UP TO DATE information available
+            </h2>
+            <h3 class="h5">We track all the places to submit an App or Software As As Service (SaaS), with reviews for each site.</h3>
+          </div>
+		  <a href="/launchsites" class="btn btn-light btn-lg px-4 rounded-pill">Show me the data!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-2">
+      <div class="row">
+        <div class="col text-center">
+          <a href="https://www.producthunt.com/posts/launch-point-zero?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-launch&#0045;point&#0045;zero" target="_blank">
+            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=398413&theme=light" alt="Launch&#0032;Point&#0032;Zero - All&#0032;the&#0032;places&#0032;worth&#0032;launching&#0032;your&#0032;next&#0032;project | Product Hunt" class="product-hunt-sticker" style="width: 250px; height: 54px;" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-statement">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>There are hundreds of places on the web where you can announce the launch of your new project.</p>
+            <p>But <i>which sites</i> are actually worth the effort? We can be your guide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="hp-launchsites" class="launchsites-flexbox py-3">
+
+            <div class="launchsite-flex-item text-center">
+
+              <div class="my-2">
+                <div class="logo-for-card text-center">
+                  <img 
+                    src={phlogo.src}
+                    alt="Product Hunt Logo" />
+                </div>
+              </div>
+
+              <div class="my-2">
+                <strong class="text-center">Product Hunt</strong>
+              </div>
+
+              <div class="my-2 tagline-container">
+              Arguably most visible place to launch, but also very competitive
+              </div>
+
+              <div class="my-2">
+                <div class="badge rounded-pill bg-success-subtle text-success-emphasis border-success-subtle">RECOMMENDED</div>
+              </div>
+
+              <div class="my-2">
+                <a target="_blank" class="btn btn-outline-primary m-1" href="http://www.producthunt.com/">View Site</a>
+                <a class="btn btn-outline-secondary m-1" href="/launchsites/product_hunt">See Details</a>
+              </div>
+
+            </div>
+
+            <div class="launchsite-flex-item text-center">
+
+              <div class="my-2">
+                <div class="logo-for-card text-center">
+                  <img 
+                    src="https://storage.googleapis.com/indie-hackers.appspot.com/branding/logos/indie-hackers-logo__glyph--light.svg" 
+                    alt="IndieHackers Logo" />
+                </div>
+              </div>
+
+              <div class="my-2">
+                <strong class="text-center">IndieHackers</strong>
+              </div>
+
+              <div class="my-2 tagline-container">
+              Easy place to announce, can be competitive so announce multiple times when you do
+              </div>
+
+              <div class="my-2">
+                <div class="badge rounded-pill bg-success-subtle text-success-emphasis border-success-subtle">RECOMMENDED</div>
+              </div>
+
+              <div class="my-2">
+                <a target="_blank" class="btn btn-outline-primary m-1" href="https://indiehackers.com">View Site</a>
+                <a class="btn btn-outline-secondary m-1" href="/launchsites/indiehackers">See Details</a>
+              </div>
+
+            </div>
+
+            <div class="launchsite-flex-item text-center">
+
+              <div class="my-2">
+                <div class="logo-placeholder text-center">10</div>
+              </div>
+
+              <div class="my-2">
+                <strong class="text-center">10words</strong>
+              </div>
+
+              <div class="my-2 tagline-container">
+              Apps and startups in 10 words or less; very active site and email newsletter
+              </div>
+
+              <div class="my-2">
+                <div class="badge rounded-pill bg-success-subtle text-success-emphasis border-success-subtle">RECOMMENDED</div>
+              </div>
+              
+              <div class="my-2">
+                <a target="_blank" class="btn btn-outline-primary m-1" href="https://10words.io">View Site</a>
+                <a class="btn btn-outline-secondary m-1" href="/launchsites/10words">See Details</a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-center mb-3">
+		<a href="/launchsites" class="btn btn-primary btn-lg px-4 rounded-pill">show me more</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-center">*Launch Point Zero is built by the same people as <a href="https://keenforms.com" target="_blank">Keenforms</a></p>
+    </div>
+</Template>
