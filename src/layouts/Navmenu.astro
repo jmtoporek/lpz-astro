@@ -1,0 +1,34 @@
+---
+export const partial = true;
+---
+
+<nav class="navbar navbar-expand-md navbar-midnight navbar-dark">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">Launch Point Zero</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar-main-menu"
+      aria-controls="navbar-main-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      data-action="click->layout#toggle"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-main-menu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/launchsites" class="nav-link">Launch Sites</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://blog.launchpointzero.com" class="nav-link">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

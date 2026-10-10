@@ -1,0 +1,148 @@
+---
+import Template from "../layouts/Template.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Template>
+  <div class="about-page">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="py-4">About Launch Point Zero</h1>
+
+          <p class="py-2">
+            So 2023 was going to be the year I would finally go all in on the
+            marketing and promoting <a
+              href="https://keenforms.com"
+              target="_blank">Keenforms</a
+            >, my SaaS form builder plus no code rules engine side project.
+            There are dozens of web pages and public google sheets documenting
+            all the places you can submit your startup to. The plan was to put
+            all these lists together, and submit Keenforms to each one.
+          </p>
+
+          <p class="py-2">
+            <a href="https://producthunt.com" target="_blank">Product Hunt</a> and
+            <a href="https://news.ycombinator.com/" target="_blank"
+              >Hacker News</a
+            > are obvious choices, however there are hundreds of others I wasn't familiar
+            with. I scraped all these sites into a single csv file, weeded out the
+            duplicates, then worked on submiting to each one.
+          </p>
+
+          <p class="py-2">
+            After attempting to submit to the first 25 or so sites I started to
+            have a realization; most of these lists were packed with garbage.
+            Maybe I shouldn't expect too much from someone who threw all the
+            links into a google doc or notion template months or even years ago.
+            However <a
+              href="https://www.indiehackers.com/post/relaunch-like-a-pro-100-places-to-launch-relaunch-and-list-your-product-7c67875635"
+              target="_blank"
+              >even a reputable site like IndieHacker has a page with <a
+                href="https://www.ticketmaster.com/chicago-fire-fc-vs-inter-miami-cf/event/04005E268CC50EEA?brand=chicagofire&refArtist=K8vZ9171b3f"
+                target="_blank">multiple</a
+              > broken or invalid listings.</a
+            > A summmary of the problems I uncovered;
+          </p>
+
+          <ul class="py-2">
+            <li>Domains that are now for sale</li>
+            <li>Defunct facebook groups</li>
+            <li>Dozens of subreddits that don't allow self promotion</li>
+            <li>
+              The one subreddit that is perfect for self promotion,
+              /r/shamelessplug, had been BANNED
+            </li>
+            <li>
+              Numerous appplication error messages, probably related to Heroku
+              ditching their free plan
+            </li>
+            <li>
+              Sites <a href="https://startuplister.com/" target="_blank"
+                >overrun by spam (mostly escorts)</a
+              >
+            </li>
+            <li>Lots of duplicate sites</li>
+            <li>Lots of typos in the domain name</li>
+          </ul>
+
+          <p class="py-2">
+            While the domains for sale and application errors were
+            disappointing, at least it didn't waste much time with them.
+          </p>
+
+          <p class="py-2">
+            More time consuming were the sites that still had a submission form
+            that you would not know were broken till you clicked submit (i.e. <a
+              href="https://getworm.com/"
+              target="_blank">Getworm</a
+            >). So many tech and startup blogs that had not posted anything in 2
+            years. Websites that were really meant for brick and mortar
+            businesses, not a web based SaaS. Sites charging a lot of money to
+            list your startup with no verifiable traffic. Search engines not
+            named google. A tell tale sign of abandonment were sites that still
+            had google plus links. My least favorite were the news websites
+            focused on startups that had no clear or obvious way to submit to.
+            Many of these lists included sites that you could not submit to, but
+            you could contribute content or worse, you could pay to advertise
+            on. Keenforms is bootstrapped, we're not paying for anything except
+            to keep the servers running.
+          </p>
+
+          <p class="py-2">
+            Then there were also some good sites that might be perfect for
+            launching if only my SaaS was in the right physical location or
+            business category. Lots of sites dedicated to gaming and mobile
+            apps. <a href="https://arcticstartup.com/" target="_blank"
+              >Arctic Startup</a
+            > is perfect, but they focus on startups in Nordic and Baltic countries
+            - Keenforms was built in Chicago, Illinois.
+          </p>
+
+          <p class="py-2">
+            After going through all these sites I realized there was a lot of
+            value to all the information I learned, and I should share my
+            findings with others who might be interested. So I did what any
+            coder who doesn't want to market but would rather write code - I
+            bought yet another domain name and then created a new project with a
+            database of all the sites.
+          </p>
+
+          <p class="py-2">
+            A big thank you to all the places I scraped data, your efforts were
+            not in vain!
+          </p>
+
+          <ul>
+            <li>
+              <a
+                href="https://www.indiehackers.com/post/relaunch-like-a-pro-100-places-to-launch-relaunch-and-list-your-product-7c67875635"
+                target="_blank">This post</a
+              > on Indiehackers
+            </li>
+            <li>
+              <a
+                href="https://docs.google.com/spreadsheets/d/1WAgFtaZno651_6Tw0nmmiYIAsJ3Bm89IRRRQ5helzLY/edit#gid=0"
+                target="_blank">Startup listing</a
+              > in a public google doc
+            </li>
+            <li>
+              <a href="https://www.submitjuice.com/" target="_blank"
+                >Submit Juice</a
+              > service that helps you submit to other sites
+            </li>
+            <li>
+              <a
+                href="https://logology.notion.site/Where-to-post-your-project-bc6ce54240884770b2467c3b0f7c1624"
+                target="_blank">This webpage</a
+              > on Notion
+            </li>
+            <li><a href="https://submit.co" target="_blank">Submit.co</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Template>
