@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LaunchSiteList from "../assets/launchsites_20261009.json";
+import LaunchSiteList from "../assets/launchsites_latest.json";
 import LaunchSiteCard from "./LaunchSiteCard.jsx";
 import LaunchSiteDetailsModal from "./LaunchSiteDetailsModal.jsx";
 

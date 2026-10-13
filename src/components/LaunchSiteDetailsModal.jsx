@@ -1,21 +1,22 @@
 import { useEffect } from "react";
+import xss from "xss";
 import "./LaunchSiteDetailsModal.css";
 
-function descriptionAsText(description) {
-  return description
-    .replace(/<img\b[^>]*alt=["']([^"']*)["'][^>]*>/gi, "$1")
-    .replace(/<\/?(?:p|div|br|li|h[1-6])\b[^>]*>/gi, "\n")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;|&apos;/gi, "'")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
-    .replace(/[ \t]+\n/g, "\n")
-    .replace(/\n[ \t]+/g, "\n")
-    .trim();
-}
+const descriptionSanitizerOptions = {
+  whiteList: {
+    a: ["href", "title"],
+    br: [],
+    em: [],
+    i: [],
+    li: [],
+    ol: [],
+    p: [],
+    strong: [],
+    ul: [],
+  },
+  stripIgnoreTag: true,
+  stripIgnoreTagBody: ["script", "style"],
+};
 
 export default function LaunchSiteDetailsModal({ launchSite, onClose }) {
   useEffect(() => {
@@ -36,7 +37,10 @@ export default function LaunchSiteDetailsModal({ launchSite, onClose }) {
     };
   }, [onClose]);
 
-  const description = descriptionAsText(launchSite.description);
+  const descriptionHtml = xss(
+    launchSite.description,
+    descriptionSanitizerOptions,
+  );
 
   return (
     <div
@@ -68,18 +72,12 @@ export default function LaunchSiteDetailsModal({ launchSite, onClose }) {
 
         <div className="launchsite-modal-body">
           {launchSite.tagline && <p className="lead">{launchSite.tagline}</p>}
-          {description && (
-            <section className="mb-3">
-              <h3 className="h6">About</h3>
-              <p className="launchsite-modal-description">{description}</p>
-            </section>
-          )}
 
           <dl className="row mb-0">
-            <dt className="col-sm-3">Status</dt>
+            <dt className="col-sm-3">Status:</dt>
             <dd className="col-sm-9">{launchSite.status}</dd>
 
-            <dt className="col-sm-3">Submission</dt>
+            <dt className="col-sm-3">Submission url:</dt>
             <dd className="col-sm-9">
               {launchSite.submit_url ? (
                 <a
@@ -94,14 +92,24 @@ export default function LaunchSiteDetailsModal({ launchSite, onClose }) {
               )}
             </dd>
 
-            <dt className="col-sm-3">Last updated</dt>
+            <dt className="col-sm-3">Last updated:</dt>
             <dd className="col-sm-9">{launchSite.updated_at.slice(0, 10)}</dd>
 
-            <dt className="col-sm-3">Verified</dt>
+            <dt className="col-sm-3">Verified:</dt>
             <dd className="col-sm-9">{launchSite.verified ? "Yes" : "No"}</dd>
 
-            <dt className="col-sm-3">Paid only</dt>
+            <dt className="col-sm-3">Paid only:</dt>
             <dd className="col-sm-9">{launchSite.paid_only ? "Yes" : "No"}</dd>
+
+            <dt className="col-sm-3">Description:</dt>
+            <dd className="col-sm-9">
+              {launchSite.description && (
+                <div
+                  className="my-2"
+                  dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                />
+              )}
+            </dd>
           </dl>
 
           {launchSite.editor_notes && (
@@ -113,11 +121,7 @@ export default function LaunchSiteDetailsModal({ launchSite, onClose }) {
         </div>
 
         <footer className="launchsite-modal-footer">
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={onClose}
-          >
+          <button type="button" className="btn btn-secondary" onClick={onClose}>
             Close
           </button>
           <a

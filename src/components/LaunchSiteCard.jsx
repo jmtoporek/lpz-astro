@@ -29,6 +29,15 @@ export default function LaunchSiteCard({ launchSite, onViewDetails }) {
 
       <div className="my-2 tagline-container">{launchSite.tagline}</div>
 
+      {/*
+      {launchSite.description && (
+        <div
+          className="my-2"
+          dangerouslySetInnerHTML={{ __html: launchSite.description }}
+        />
+      )}
+      */}
+
       <div className="my-2">
         <a
           target="_blank"
