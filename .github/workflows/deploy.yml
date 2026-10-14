@@ -9,6 +9,7 @@ jobs:
   web-deploy:
     name: Build and Sync to FTP
     runs-on: ubuntu-latest
+    environment: lpz_dreamhost
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
