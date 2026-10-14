@@ -31,7 +31,8 @@ jobs:
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          # password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.SSH_KEY }}
           local-dir: ./dist/
-          server-dir: ./launchpointzero.com/ # Replace with your target folder on DreamHost
+          server-dir: /home/jmtoporek_lpz/launchpointzero.com # ./launchpointzero.com/ # Replace with your target folder on DreamHost
           port: 22
