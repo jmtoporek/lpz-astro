@@ -1,0 +1,27 @@
+name: Auto Build Astro Page via Github
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Build and upload to FTP server
+        uses: abelsrzz/astro-ftps-action@v1.0.3
+
+        with:
+          ftp_host: ${{ secrets.FTP_SERVER }}
+          ftp_user: ${{ secrets.FTP_USERNAME }}
+          ftp_pass: ${{ secrets.FTP_PASSWORD }}
+          local_dir: ./dist
+          remote_dir: ./launchpointzero.com #/someweb.com/src # update this to your remote directory
+          force_ssl: true
