@@ -1,4 +1,4 @@
-name: Build and Deploy Astro to DreamHost FTP
+name: Build and Deploy Astro to DreamHost
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   web-deploy:
-    name: Build and Sync to FTP
+    name: Build and Sync over SSH
     runs-on: ubuntu-latest
     environment: lpz_dreamhost
     steps:
@@ -26,14 +26,12 @@ jobs:
       - name: 🔨 Build Astro project
         run: npm run build
 
-      - name: 📂 Sync files to DreamHost FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      - name: 📂 Sync files to DreamHost over SSH
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          # password: ${{ secrets.FTP_PASSWORD }}
-          password: ${{ secrets.SSH_KEY }}
-          local-dir: ./dist/
-          server-dir: /://launchpointzero.com/ # ./launchpointzero.com/ # Replace with your target folder on DreamHost
-          port: 22
-          protocol: ftps
+          target-server: ${{ secrets.FTP_SERVER }}
+          remote-user: ${{ secrets.FTP_USER }}
+          private-ssh-key: ${{ secrets.SSH_KEY }}
+          source-path: ./dist/
+          destination-path: ~/launchpointzero.com/
+          ssh-port: 22
