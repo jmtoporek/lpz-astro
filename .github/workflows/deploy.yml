@@ -29,8 +29,8 @@ jobs:
       - name: 📂 Sync files to DreamHost over SSH
         uses: SamKirkland/web-deploy@v1
         with:
-          target-server: ${{ secrets.FTP_SERVER }}
-          remote-user: ${{ secrets.FTP_USERNAME }}
+          target-server: ${{ secrets.SSH_HOST }}
+          remote-user: ${{ secrets.SSH_USER }}
           private-ssh-key: ${{ secrets.SSH_KEY }}
           source-path: ./dist/
           destination-path: ~/launchpointzero.com/
