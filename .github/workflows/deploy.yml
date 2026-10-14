@@ -36,4 +36,4 @@ jobs:
           local-dir: ./dist/
           server-dir: /://launchpointzero.com/ # ./launchpointzero.com/ # Replace with your target folder on DreamHost
           port: 22
-          protocol: sftp
+          # protocol: sftp
