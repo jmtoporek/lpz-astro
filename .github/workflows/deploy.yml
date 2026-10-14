@@ -3,7 +3,7 @@ name: Build and Deploy Astro to DreamHost
 on:
   push:
     branches:
-      - main # Change to 'master' if your main branch is named master
+      - main
 
 jobs:
   web-deploy:
