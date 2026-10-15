@@ -1,6 +1,17 @@
 ---
 import "../styles/global.css";
 import Navmenu from "./Navmenu.astro";
+
+const currentDate = new Date();
+
+// Optional: Format the date using standard JavaScript methods
+const formattedDate = currentDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+});
 ---
 
 <!doctype html>
@@ -8,7 +19,7 @@ import Navmenu from "./Navmenu.astro";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- updated on {new Date().toISOString().split('T')[0]} -->
+    {`<!-- updated on : ${formattedDate} -->`}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
