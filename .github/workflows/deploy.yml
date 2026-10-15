@@ -31,7 +31,7 @@ jobs:
         with:
           target-server: ${{ secrets.SSH_HOST }}
           remote-user: ${{ secrets.SSH_USER }}
-          private-ssh-key: ${{ secrets.SSH_KEY }}
+          private-ssh-key: ${{ secrets.SSH_KEY_ED25519_PRIVATE }}
           source-path: ./dist/
           destination-path: ~/launchpointzero.com/
           ssh-port: 22
