@@ -9,13 +9,15 @@ import partytown from "@astrojs/partytown";
 
 import sitemap from "@astrojs/sitemap";
 
+import aiRobotsTxt from "astro-ai-robots-txt";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), mdx(), partytown({
     config: {
       forward: ["dataLayer.push"],
     },
-  }), sitemap()],
+  }), sitemap(), aiRobotsTxt()],
   site: "https://launchpointzero.com",
   output: "static",
 });
